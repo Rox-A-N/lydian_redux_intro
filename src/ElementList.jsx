@@ -4,13 +4,16 @@ function ElementList() {
     const elementList = useSelector(store => store.elementList);
 
     return(
-        <ul>
-            {elementList.map((element, index) => (
-                <li key={index}>
-                    {element}
-                </li>
-            ))}
-        </ul>
+        <div>
+            <p>Element List aka TV Channel</p>
+            <ul>
+                {elementList.map((element, index) => (
+                    <li key={index}>
+                        {element}
+                    </li>
+                ))}
+            </ul>
+        </div>
 
 
     )

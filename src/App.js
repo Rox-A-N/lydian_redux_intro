@@ -3,6 +3,7 @@ import { useState } from 'react';
 // useSelector is a hook provided by the react-redux library
 import { useDispatch, useSelector } from 'react-redux';
 import ElementList from './ElementList';
+import ElementForm from './ElementForm';
 
 function App () {
     // useSelector accepts a function that tells it what part of the store you want.
@@ -35,15 +36,19 @@ function App () {
         <button onClick={() => dispatch({type: 'DECREASE'})}>decrease count!</button>
         
         {/* <p>The Element List is: {JSON.stringify(elementList)}</p>  */}
+        {/* Form to allow users to add new element */}
+        <ElementForm />
+
+        {/* Render the elements list from redux */}
         <ElementList />
-        <form onSubmit={handleSubmit}>
+        {/* <form onSubmit={handleSubmit}>
           <input type='text'
           placeholder='Element Name Goes Here'
           value={newElement}
           onChange={event => setNewElement(event.target.value)}
           />
           <button type='submit'>Add Element</button>
-        </form>
+        </form> */}
         {/* <button onClick={() => dispatch({ type: 'ADD_ELEMENT', payload: 'radium' })}>Add Element</button> */}
 
       </div>
